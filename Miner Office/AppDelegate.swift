@@ -13,9 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //UINavigationBar.appearance().barTintColor = Utils.hexStringToUIColor(hex: "#ecf0f1")
+        UINavigationBar.appearance().tintColor = Utils.hexStringToUIColor(hex: "#e74c3c")
+        
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        
         UserSettings.fetchUserSettings()
 
         return true

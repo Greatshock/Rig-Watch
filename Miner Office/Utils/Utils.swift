@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class Utils {
-    static func hexStringToUIColor (hex:String) -> UIColor {
+enum Utils {
+    
+    static func hexStringToUIColor(hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         if (cString.hasPrefix("#")) {
             cString.remove(at: cString.startIndex)
@@ -29,5 +30,19 @@ class Utils {
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
         )
+    }
+    
+    static func addressContainsInvalidCharacters(addressToCheck: String) -> Bool {
+        let characterset = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+        
+        if addressToCheck.rangeOfCharacter(from: characterset.inverted) != nil {
+            return true
+        }
+        
+        return false
+    }
+    
+    static func getCurrentTimestamp() -> Int64 {
+        return Int64(Date().timeIntervalSince1970)
     }
 }
