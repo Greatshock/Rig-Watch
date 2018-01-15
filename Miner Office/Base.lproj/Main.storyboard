@@ -101,7 +101,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bjd-ar-Plm"/>
                                 </constraints>
-                                <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -182,6 +182,7 @@
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="PvQ-85-A9e" id="4iJ-ed-bxa"/>
+                        <outlet property="pickerView" destination="tib-1f-cOV" id="CRO-FV-tkQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juk-5z-kgS" userLabel="First Responder" sceneMemberID="firstResponder"/>

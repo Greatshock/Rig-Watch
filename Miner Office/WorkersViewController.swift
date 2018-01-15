@@ -30,6 +30,12 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.present(alert, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? AddViewController {
+            destination.tableView = self.tableView
+        }
+    }
+    
     // TableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
@@ -78,10 +84,5 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.endUpdates()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? AddViewController {
-            destination.tableView = self.tableView
-        }
-    }
 }
 

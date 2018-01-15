@@ -11,6 +11,7 @@ import UIKit
 class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var pickerView: UIPickerView!
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -50,12 +51,16 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                 self.activityIndicator.startAnimating()
                 UIApplication.shared.beginIgnoringInteractionEvents()
                 
-                self.selectedPool.addNewWorkers(address: addr, workers: workersJson)
+                self.selectedPool.updateWorkers(address: addr, workers: workersJson)
                 self.tableView?.reloadData()
                 self.navigationController?.popViewController(animated: true)
                 
+                sections[self.pickerView.selectedRow(inComponent: 0)].expanded = true
+                
                 self.activityIndicator.stopAnimating()
                 UIApplication.shared.endIgnoringInteractionEvents()
+                
+                print(self.selectedPool.addresses)
             }
         }
     }

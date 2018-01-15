@@ -9,8 +9,8 @@
 import Foundation
 
 var sections = [
-    Section(pool: pools[0], expanded: true),
-    Section(pool: pools[1], expanded: true),
-    Section(pool: pools[2], expanded: true),
-    Section(pool: pools[3], expanded: true),
+    Section(pool: pools[0], expanded: false),
+    Section(pool: pools[1], expanded: false),
+    Section(pool: pools[2], expanded: false),
+    Section(pool: pools[3], expanded: false),
 ]
