@@ -12,13 +12,28 @@ enum UserSettings {
     
     
     static private func saveWorkers() {
-        let workersData = NSKeyedArchiver.archivedData(withRootObject: pools[1].workers)
+        var workersData = NSKeyedArchiver.archivedData(withRootObject: pools[0].workers)
+        UserDefaults.standard.set(workersData, forKey: "ethermine.orgWorkers")
+        workersData = NSKeyedArchiver.archivedData(withRootObject: pools[1].workers)
         UserDefaults.standard.set(workersData, forKey: "etc.ethermine.orgWorkers")
+        workersData = NSKeyedArchiver.archivedData(withRootObject: pools[2].workers)
+        UserDefaults.standard.set(workersData, forKey: "zcash.flypool.orgWorkers")
+        workersData = NSKeyedArchiver.archivedData(withRootObject: pools[3].workers)
+        UserDefaults.standard.set(workersData, forKey: "ethpool.orgWorkers")
     }
     
     static private func fetchWorkers() {
+        if let workersData = UserDefaults.standard.object(forKey: "ethermine.orgWorkers") as? Data {
+            pools[0].workers = NSKeyedUnarchiver.unarchiveObject(with: workersData as Data) as? [Worker]
+        }
         if let workersData = UserDefaults.standard.object(forKey: "etc.ethermine.orgWorkers") as? Data {
             pools[1].workers = NSKeyedUnarchiver.unarchiveObject(with: workersData as Data) as? [Worker]
+        }
+        if let workersData = UserDefaults.standard.object(forKey: "zcash.flypool.orgWorkers") as? Data {
+            pools[2].workers = NSKeyedUnarchiver.unarchiveObject(with: workersData as Data) as? [Worker]
+        }
+        if let workersData = UserDefaults.standard.object(forKey: "ethpool.orgWorkers") as? Data {
+            pools[3].workers = NSKeyedUnarchiver.unarchiveObject(with: workersData as Data) as? [Worker]
         }
     }
 

@@ -10,14 +10,6 @@ import Foundation
 
 enum ApiService {
     
-//    static func addressIsValid(pool: Pool, address: String) -> Bool {
-//
-//        let url = URL(string: pool.endpoint + "/miner/" + address + "/currentStats")
-//
-//        URLSession.shared.dataTask(with: url!)
-//
-//        return true
-//    }
     static func getWorkersByPoolAndAddress(pool: Pool, minerAddress: String,
                                            onError: @escaping (_ title: String, _ message: String) -> (),
                                            onCompletion: @escaping (_ address: String, _ workersJson: JSON) -> ()) {

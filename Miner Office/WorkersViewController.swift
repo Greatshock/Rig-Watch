@@ -11,6 +11,7 @@ import UIKit
 class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ExpandableHeaderViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,32 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func refreshPressed(_ sender: Any) {
+        
+        for pool in pools {
+            if pool.addresses != nil {
+                for address in pool.addresses {
+                    ApiService.getWorkersByPoolAndAddress(pool: pool, minerAddress: address, onError: popupAlert) {addr, workersJson in
+                        DispatchQueue.main.async {
+                            self.activityIndicator.center = self.view.center
+                            self.activityIndicator.hidesWhenStopped = true
+                            self.view.addSubview(self.activityIndicator)
+                            self.activityIndicator.startAnimating()
+                            UIApplication.shared.beginIgnoringInteractionEvents()
+                            
+                            print(workersJson)
+                            pool.updateWorkers(address: addr, workers: workersJson)
+                            self.tableView?.reloadData()
+                            
+                            self.activityIndicator.stopAnimating()
+                            UIApplication.shared.endIgnoringInteractionEvents()
+                        }
+                    }
+                }
+            }
+        }
     }
     
     func popupAlert(title: String, message: String) {

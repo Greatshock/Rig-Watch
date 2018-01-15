@@ -72,7 +72,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Workers" id="lyJ-xe-BeH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Mfm-Wn-GuC"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Mfm-Wn-GuC">
+                            <connections>
+                                <action selector="refreshPressed:" destination="BYZ-38-t0r" id="06h-ZW-5VC"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hpQ-W8-jAq">
                             <connections>
                                 <segue destination="77P-vE-nxp" kind="show" id="zVh-WO-QRs"/>
