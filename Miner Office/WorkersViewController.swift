@@ -70,7 +70,7 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell")!
         cell.textLabel?.text = sections[indexPath.section].pool.workers[indexPath.row].name
-        cell.detailTextLabel?.text = sections[indexPath.section].pool.workers[indexPath.row].status.rawValue
+        cell.detailTextLabel?.text = sections[indexPath.section].pool.workers[indexPath.row].status
         return cell
     }
     

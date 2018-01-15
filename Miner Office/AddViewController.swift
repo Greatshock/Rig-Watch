@@ -59,8 +59,6 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                 
                 self.activityIndicator.stopAnimating()
                 UIApplication.shared.endIgnoringInteractionEvents()
-                
-                print(self.selectedPool.addresses)
             }
         }
     }

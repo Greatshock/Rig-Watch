@@ -12,11 +12,14 @@ enum UserSettings {
     
     
     static private func saveWorkers() {
-        
+        let workersData = NSKeyedArchiver.archivedData(withRootObject: pools[1].workers)
+        UserDefaults.standard.set(workersData, forKey: "etc.ethermine.orgWorkers")
     }
     
     static private func fetchWorkers() {
-        
+        if let workersData = UserDefaults.standard.object(forKey: "etc.ethermine.orgWorkers") as? Data {
+            pools[1].workers = NSKeyedUnarchiver.unarchiveObject(with: workersData as Data) as? [Worker]
+        }
     }
 
     static private func saveAddresses() {

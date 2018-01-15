@@ -9,6 +9,7 @@
 import Foundation
 
 class Pool {
+    
     var name: String!
     var endpoint: String!
     var addresses: [String]!
@@ -56,15 +57,15 @@ class Pool {
                 
                 let currentTime = Utils.getCurrentTimestamp()
                 if (currentTime - Int64(self.workers[index].lastSeen)!) > 900 {
-                    self.workers[index].status = Worker.Status.inactive
+                    self.workers[index].status = Worker.Status.inactive.rawValue
                 } else {
-                    self.workers[index].status = Worker.Status.active
+                    self.workers[index].status = Worker.Status.active.rawValue
                 }
                 
             } else {
                 
                 // Create new worker
-                var newWorker = Worker(name: workerName!, address: address)
+                let newWorker = Worker(name: workerName!, address: address)
 
                 // Add info about worker
                 newWorker.validShares = workerInfo["validShares"]?.stringValue
@@ -75,9 +76,9 @@ class Pool {
 
                 let currentTime = Utils.getCurrentTimestamp()
                 if (currentTime - Int64(newWorker.lastSeen)!) > 900 {
-                    newWorker.status = Worker.Status.inactive
+                    newWorker.status = Worker.Status.inactive.rawValue
                 } else {
-                    newWorker.status = Worker.Status.active
+                    newWorker.status = Worker.Status.active.rawValue
                 }
 
                 self.workers.append(newWorker)
