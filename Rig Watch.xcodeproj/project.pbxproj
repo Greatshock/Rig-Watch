@@ -20,6 +20,7 @@
 		FD02A10B2003BAE90090B72E /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02A10A2003BAE90090B72E /* Worker.swift */; };
 		FD513BCE200A064300748B5A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD513BCD200A064300748B5A /* SwiftyJSON.swift */; };
 		FD513C79200A16F700748B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD513C78200A16F600748B5A /* Assets.xcassets */; };
+		FD7C0CAD200E9C08004E0B1A /* WorkerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7C0CAC200E9C08004E0B1A /* WorkerDetailViewController.swift */; };
 		FD7F47DB200BC32400249ED8 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F47C5200BC32400249ED8 /* IQTextView.swift */; };
 		FD7F47DC200BC32400249ED8 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F47C7200BC32400249ED8 /* IQPreviousNextView.swift */; };
 		FD7F47DD200BC32400249ED8 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F47C8200BC32400249ED8 /* IQTitleBarButtonItem.swift */; };
@@ -57,6 +58,7 @@
 		FD02A10A2003BAE90090B72E /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		FD513BCD200A064300748B5A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		FD513C78200A16F600748B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD7C0CAC200E9C08004E0B1A /* WorkerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerDetailViewController.swift; sourceTree = "<group>"; };
 		FD7F47C5200BC32400249ED8 /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
 		FD7F47C7200BC32400249ED8 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
 		FD7F47C8200BC32400249ED8 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				FD02A0ED2003917D0090B72E /* Main.storyboard */,
 				FD02A0F22003917D0090B72E /* LaunchScreen.storyboard */,
 				FD02A0F52003917D0090B72E /* Info.plist */,
+				FD7C0CAC200E9C08004E0B1A /* WorkerDetailViewController.swift */,
 			);
 			path = "Rig Watch";
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				FD02A1072003AD9C0090B72E /* Sections.swift in Sources */,
 				FD02A1042003A2790090B72E /* UserSettings.swift in Sources */,
 				FD02A1092003B8590090B72E /* Pools.swift in Sources */,
+				FD7C0CAD200E9C08004E0B1A /* WorkerDetailViewController.swift in Sources */,
 				FD7F47E6200BC32400249ED8 /* IQUIWindow+Hierarchy.swift in Sources */,
 				FD7F47E2200BC32400249ED8 /* IQKeyboardManagerConstants.swift in Sources */,
 				FD7F47E9200BC32400249ED8 /* IQUITextFieldView+Additions.swift in Sources */,

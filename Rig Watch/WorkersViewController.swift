@@ -12,6 +12,7 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    var selectedWorker: Worker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,10 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        refreshPressed(self)
+        tableView.reloadData()
     }
     
     @IBAction func refreshPressed(_ sender: Any) {
-        print("refreshed")
         for pool in pools {
             if pool.addresses != nil {
                 for address in pool.addresses {
@@ -64,6 +64,11 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddViewController {
             destination.tableView = self.tableView
+            return
+        }
+        
+        if let destination = segue.destination as? WorkerDetailViewController {
+            destination.worker = selectedWorker
         }
     }
     
@@ -73,8 +78,8 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
         if editingStyle == UITableViewCellEditingStyle.delete {
             
             // Popup alert sheet
-            let alert = UIAlertController(title: "Remove workers with the same address?", message: "", preferredStyle: .actionSheet)
-            let deleteAllAction = UIAlertAction(title: "Delete all workers", style: .default) { (alert: UIAlertAction!) -> Void in
+            let alert = UIAlertController(title: "Remove all workers in the pool?", message: "", preferredStyle: .actionSheet)
+            let deleteAllAction = UIAlertAction(title: "Delete all workers in pool", style: .default) { (alert: UIAlertAction!) -> Void in
                 pools[indexPath.section].workers.removeAll()
                 pools[indexPath.section].addresses.removeAll()
                 tableView.reloadData()
@@ -138,6 +143,12 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedWorker = pools[indexPath.section].workers[indexPath.row]
+
+        performSegue(withIdentifier: "showWorkerDetails", sender: self)
     }
     
     func toggleSection(header: ExpandableHeaderView, section: Int) {
