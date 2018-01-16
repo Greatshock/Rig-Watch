@@ -47,23 +47,14 @@ class Pool {
             }
             
             if workerExists { // Worker exists
-                
+
                 // Update worker info
                 self.workers[index].validShares = workerInfo["validShares"]?.stringValue
                 self.workers[index].currentHashrate = workerInfo["currentHashrate"]?.stringValue
                 self.workers[index].lastSeen = workerInfo["lastSeen"]?.stringValue
                 self.workers[index].staleShares = workerInfo["staleShares"]?.stringValue
                 self.workers[index].invalidShares = workerInfo["invalidShares"]?.stringValue
-                
-                let currentTime = Utils.getCurrentTimestamp()
-                if (currentTime - Int64(self.workers[index].lastSeen)!) > 900 {
-                    self.workers[index].status = Worker.Status.inactive.rawValue
-                } else {
-                    self.workers[index].status = Worker.Status.active.rawValue
-                }
-                
             } else {
-                
                 // Create new worker
                 let newWorker = Worker(name: workerName!, address: address)
 
@@ -73,13 +64,6 @@ class Pool {
                 newWorker.lastSeen = workerInfo["lastSeen"]?.stringValue
                 newWorker.staleShares = workerInfo["staleShares"]?.stringValue
                 newWorker.invalidShares = workerInfo["invalidShares"]?.stringValue
-
-                let currentTime = Utils.getCurrentTimestamp()
-                if (currentTime - Int64(newWorker.lastSeen)!) > 900 {
-                    newWorker.status = Worker.Status.inactive.rawValue
-                } else {
-                    newWorker.status = Worker.Status.active.rawValue
-                }
 
                 self.workers.append(newWorker)
             }

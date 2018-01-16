@@ -36,7 +36,6 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
                             self.activityIndicator.startAnimating()
                             UIApplication.shared.beginIgnoringInteractionEvents()
                             
-                            print(workersJson)
                             pool.updateWorkers(address: addr, workers: workersJson)
                             self.tableView?.reloadData()
                             
@@ -97,7 +96,16 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell")!
         cell.textLabel?.text = sections[indexPath.section].pool.workers[indexPath.row].name
-        cell.detailTextLabel?.text = sections[indexPath.section].pool.workers[indexPath.row].status
+        
+        let current = Utils.getCurrentTimestamp()
+        let lastSeen = Int64(sections[indexPath.section].pool.workers[indexPath.row].lastSeen)!
+        let minutesInterval = Int((Double(current - lastSeen) / 60).rounded())
+        if minutesInterval == 1 {
+            cell.detailTextLabel?.text = "Last seen \(minutesInterval) minute ago"
+        } else {
+            cell.detailTextLabel?.text = "Last seen \(minutesInterval) minutes ago"
+        }
+        
         return cell
     }
     
