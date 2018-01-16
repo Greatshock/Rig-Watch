@@ -73,7 +73,7 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
         if editingStyle == UITableViewCellEditingStyle.delete {
             
             // Popup alert sheet
-            let alert = UIAlertController(title: "", message: "Remove workers with the same address?", preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: "Remove workers with the same address?", message: "", preferredStyle: .actionSheet)
             let deleteAllAction = UIAlertAction(title: "Delete all workers", style: .default) { (alert: UIAlertAction!) -> Void in
                 pools[indexPath.section].workers.removeAll()
                 pools[indexPath.section].addresses.removeAll()
