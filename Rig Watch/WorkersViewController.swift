@@ -111,6 +111,10 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.detailTextLabel?.text = "Last seen \(minutesInterval) minutes ago"
         }
         
+        if minutesInterval > 14 {
+            cell.backgroundColor = Utils.hexStringToUIColor(hex: "#f79279")
+        }
+        
         return cell
     }
     

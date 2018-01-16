@@ -93,7 +93,7 @@
 		FD02A0DD2003917D0090B72E = {
 			isa = PBXGroup;
 			children = (
-				FD02A0E82003917D0090B72E /* Miner Office */,
+				FD02A0E82003917D0090B72E /* Rig Watch */,
 				FD02A0E72003917D0090B72E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,7 +106,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FD02A0E82003917D0090B72E /* Miner Office */ = {
+		FD02A0E82003917D0090B72E /* Rig Watch */ = {
 			isa = PBXGroup;
 			children = (
 				FD7F47C3200BC32400249ED8 /* IQKeyboardManagerSwift */,
@@ -121,7 +121,7 @@
 				FD02A0F22003917D0090B72E /* LaunchScreen.storyboard */,
 				FD02A0F52003917D0090B72E /* Info.plist */,
 			);
-			path = "Miner Office";
+			path = "Rig Watch";
 			sourceTree = "<group>";
 		};
 		FD02A0FB200391D00090B72E /* ExpandableHeaderView */ = {
