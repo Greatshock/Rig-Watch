@@ -42,7 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FD02A0E62003917D0090B72E /* Miner Office.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Miner Office.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD02A0E62003917D0090B72E /* Rig Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rig Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD02A0E92003917D0090B72E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD02A0EB2003917D0090B72E /* WorkersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkersViewController.swift; sourceTree = "<group>"; };
 		FD02A0EE2003917D0090B72E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		FD02A0E72003917D0090B72E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD02A0E62003917D0090B72E /* Miner Office.app */,
+				FD02A0E62003917D0090B72E /* Rig Watch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,9 +222,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FD02A0E52003917D0090B72E /* Miner Office */ = {
+		FD02A0E52003917D0090B72E /* Rig Watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD02A0F82003917D0090B72E /* Build configuration list for PBXNativeTarget "Miner Office" */;
+			buildConfigurationList = FD02A0F82003917D0090B72E /* Build configuration list for PBXNativeTarget "Rig Watch" */;
 			buildPhases = (
 				FD02A0E22003917D0090B72E /* Sources */,
 				FD02A0E32003917D0090B72E /* Frameworks */,
@@ -234,9 +234,9 @@
 			);
 			dependencies = (
 			);
-			name = "Miner Office";
+			name = "Rig Watch";
 			productName = "Miner Office";
-			productReference = FD02A0E62003917D0090B72E /* Miner Office.app */;
+			productReference = FD02A0E62003917D0090B72E /* Rig Watch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FD02A0E12003917D0090B72E /* Build configuration list for PBXProject "Miner Office" */;
+			buildConfigurationList = FD02A0E12003917D0090B72E /* Build configuration list for PBXProject "Rig Watch" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -268,7 +268,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FD02A0E52003917D0090B72E /* Miner Office */,
+				FD02A0E52003917D0090B72E /* Rig Watch */,
 			);
 		};
 /* End PBXProject section */
@@ -458,7 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4TQYV352C;
-				INFOPLIST_FILE = "Miner Office/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Rig Watch/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marinosyan.Miner-Office";
@@ -474,7 +474,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4TQYV352C;
-				INFOPLIST_FILE = "Miner Office/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Rig Watch/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marinosyan.Miner-Office";
@@ -487,7 +487,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FD02A0E12003917D0090B72E /* Build configuration list for PBXProject "Miner Office" */ = {
+		FD02A0E12003917D0090B72E /* Build configuration list for PBXProject "Rig Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD02A0F62003917D0090B72E /* Debug */,
@@ -496,7 +496,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD02A0F82003917D0090B72E /* Build configuration list for PBXNativeTarget "Miner Office" */ = {
+		FD02A0F82003917D0090B72E /* Build configuration list for PBXNativeTarget "Rig Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD02A0F92003917D0090B72E /* Debug */,

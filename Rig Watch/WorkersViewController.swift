@@ -68,6 +68,28 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     // TableView
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            
+            // Popup alert sheet
+            let alert = UIAlertController(title: "", message: "Remove workers with the same address?", preferredStyle: .actionSheet)
+            let deleteAllAction = UIAlertAction(title: "Delete all workers", style: .default) { (alert: UIAlertAction!) -> Void in
+                pools[indexPath.section].workers.removeAll()
+                pools[indexPath.section].addresses.removeAll()
+                tableView.reloadData()
+            }
+            let deleteOnlyOne = UIAlertAction(title: "Delete only selected worker", style: .default) { (alert: UIAlertAction!) -> Void in
+                pools[indexPath.section].workers.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
+            }
+            alert.addAction(deleteOnlyOne)
+            alert.addAction(deleteAllAction)
+            
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
