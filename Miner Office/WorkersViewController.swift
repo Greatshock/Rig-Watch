@@ -23,8 +23,13 @@ class WorkersViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        refreshPressed(self)
+    }
+    
     @IBAction func refreshPressed(_ sender: Any) {
-        
+        print("refreshed")
         for pool in pools {
             if pool.addresses != nil {
                 for address in pool.addresses {

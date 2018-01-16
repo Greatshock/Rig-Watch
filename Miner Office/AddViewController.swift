@@ -52,7 +52,6 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                 UIApplication.shared.beginIgnoringInteractionEvents()
                 
                 self.selectedPool.updateWorkers(address: addr, workers: workersJson)
-                self.tableView?.reloadData()
                 self.navigationController?.popViewController(animated: true)
                 
                 sections[self.pickerView.selectedRow(inComponent: 0)].expanded = true

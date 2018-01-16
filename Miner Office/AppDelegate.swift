@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         
         UserSettings.fetchUserSettings()
-
+        
         return true
     }
 

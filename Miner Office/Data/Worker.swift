@@ -14,12 +14,12 @@ class Worker: NSObject, NSCoding {
     var address: String!
     var lastSeen: String!
     //var time: String!
-    //var reportedHashrate: String
+    //var reportedHashrate: String!
+    //var averageHashrate: String!
     var currentHashrate: String!
     var validShares: String!
     var invalidShares: String!
     var staleShares: String!
-    //var averageHashrate: String
     
     init(name: String, address: String) {
         self.name = name
